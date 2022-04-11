@@ -15,7 +15,7 @@ logger.setLevel(logging.INFO)
 
 class ClsToKafka(object):
     """
-    CLS 消息投递 kafka
+    CLS to kafka
     """
 
     def __init__(self, host, **kwargs):
@@ -31,9 +31,6 @@ class ClsToKafka(object):
         )
 
     def send(self, topic, records):
-        """
-        异步生产 kafka 消息
-        """
 
         global count
         count = 0
@@ -71,7 +68,7 @@ class ClsToKafka(object):
         return "{} messages delivered in {}s".format(count, e_time - s_time)
 
 
-# 这里可以对消息进行处理后返回
+# process the message if need
 def deal_message(message):
     return message
 
@@ -88,7 +85,7 @@ def main_handler(event, context):
         # security_protocol = "SASL_PLAINTEXT",
         # sasl_mechanism = "PLAIN",
         # sasl_plain_username = "ckafka-80o10xxx#lkoxx",
-        # sasl_plain_password = "ccllxxxx",
+        # sasl_plain_password = "123",
         # api_version=(0, 10, 2)
     )
     debase = base64.b64decode(event['clslogs']['data'])

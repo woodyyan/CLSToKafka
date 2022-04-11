@@ -1,0 +1,33 @@
+app: ClsToKafka
+component: scf
+inputs:
+  description: Cls to kafka
+  eip: false
+  environment:
+    variables:
+      kafka_address: '123'
+      kafka_topic_name: 'topic'
+  events:
+    - cls:
+        parameters:
+          enable: true
+          qualifier: $DEFAULT
+          topicId: ce8e7dbc-4f88-4d7b-b121-b4dd8dfefbd4
+  handler: index.main_handler
+  initTimeout: 65
+  memorySize: 512
+  msgTTL: 21600
+  name: ClsToKafka
+  namespace: default
+  publicAccess: true
+  region: ap-chengdu
+  retryNum: 0
+  runtime: Python3.6
+  src: ./
+  timeout: 10
+  type: event
+name: ap-chengdu_default_ClsToKafka
+org: '1307427535'
+stage: dev
+# When using this configuration file for deployment, make sure the file name is "serverless.yml".
+# For more information: https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md
