@@ -1,18 +1,23 @@
 app: ClsToKafka
 component: scf
 inputs:
+  cls:
+    logsetId: 7cb1c8d7-0a91-452f-95fe-78441855e24c
+    topicId: 2c81e19a-4d49-489f-892f-c13dcf17bab1
   description: Cls to kafka
   eip: false
   environment:
     variables:
-      kafka_address: '123'
-      kafka_topic_name: 'topic'
+      kafka_address: 123
+      kafka_topic_name: topic
+      sasl_plain_username: user
+      sasl_plain_password: pass
   events:
     - cls:
         parameters:
           enable: true
           qualifier: $DEFAULT
-          topicId: ce8e7dbc-4f88-4d7b-b121-b4dd8dfefbd4
+          topicId: f5ca2b54-be89-47dd-9aca-a55b7db691e3
   handler: index.main_handler
   initTimeout: 65
   memorySize: 512

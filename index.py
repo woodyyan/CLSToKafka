@@ -79,14 +79,16 @@ def main_handler(event, context):
 
     kafka_address = os.getenv("kafka_address")
     kafka_topic_name = os.getenv("kafka_topic_name")
+    sasl_plain_username = os.getenv("sasl_plain_username")
+    sasl_plain_password = os.getenv("sasl_plain_password")
 
     kafka_to_kafka = ClsToKafka(
-        kafka_address
-        # security_protocol = "SASL_PLAINTEXT",
-        # sasl_mechanism = "PLAIN",
-        # sasl_plain_username = "ckafka-80o10xxx#lkoxx",
-        # sasl_plain_password = "123",
-        # api_version=(0, 10, 2)
+        bootstrap_servers=[kafka_address],
+        security_protocol="SASL_PLAINTEXT",
+        sasl_mechanism="PLAIN",
+        sasl_plain_username=sasl_plain_username,
+        sasl_plain_password=sasl_plain_password,
+        api_version=(1, 1)
     )
     debase = base64.b64decode(event['clslogs']['data'])
     data = gzip.decompress(debase).decode()
