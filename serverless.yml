@@ -12,12 +12,6 @@ inputs:
       kafka_topic_name: topic
       sasl_plain_username: user
       sasl_plain_password: pass
-  events:
-    - cls:
-        parameters:
-          enable: true
-          qualifier: $DEFAULT
-          topicId: f5ca2b54-be89-47dd-9aca-a55b7db691e3
   handler: index.main_handler
   initTimeout: 65
   memorySize: 512
@@ -25,13 +19,13 @@ inputs:
   name: ClsToKafka
   namespace: default
   publicAccess: true
-  region: ap-chengdu
+  region: ap-shanghai
   retryNum: 0
   runtime: Python3.6
   src: ./
   timeout: 10
   type: event
-name: ap-chengdu_default_ClsToKafka
+name: ap-shanghai_default_ClsToKafka
 org: '1307427535'
 stage: dev
 # When using this configuration file for deployment, make sure the file name is "serverless.yml".
