@@ -1,9 +1,6 @@
 app: ClsToKafka
 component: scf
 inputs:
-  cls:
-    logsetId: 7cb1c8d7-0a91-452f-95fe-78441855e24c
-    topicId: 2c81e19a-4d49-489f-892f-c13dcf17bab1
   description: Cls to kafka
   eip: false
   environment:
@@ -14,7 +11,7 @@ inputs:
       sasl_plain_password: pass
   handler: index.main_handler
   initTimeout: 65
-  memorySize: 512
+  memorySize: 5122c81e19a-4d49-489f-892f-c13dcf17bab1
   msgTTL: 21600
   name: ClsToKafka
   namespace: default
