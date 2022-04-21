@@ -11,7 +11,7 @@ inputs:
       sasl_plain_password: pass
   handler: index.main_handler
   initTimeout: 65
-  memorySize: 5122c81e19a-4d49-489f-892f-c13dcf17bab1
+  memorySize: 512
   msgTTL: 21600
   name: ClsToKafka
   namespace: default
